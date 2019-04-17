@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfS3ConnectionProfileEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <S3ConnectionProfileEntity>
+    <CannedACL>public-read-write</CannedACL>
+    <Id>06</Id>
+    <ProfileName>CaspersSoftware</ProfileName>
+    <BucketName>cs-amazons3demo</BucketName>
+    <AccessKeyId>AKIAQGLQJ7PJBOTCYQ5K</AccessKeyId>
+    <SecretAccessKey>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</SecretAccessKey>
+    <AccountNumber />
+    <AccountType />
+    <KeyBasedAccessFlag>true</KeyBasedAccessFlag>
+    <SelectedFlag>true</SelectedFlag>
+    <Region>us-east-1</Region>
+    <FolderName />
+  </S3ConnectionProfileEntity>
+</ArrayOfS3ConnectionProfileEntity>

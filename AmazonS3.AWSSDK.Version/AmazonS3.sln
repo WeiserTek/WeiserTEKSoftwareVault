@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.Win", "AmazonS3.Win\AmazonS3.Win.csproj", "{707B84D7-D10D-4ECD-A8EF-F9B2B4EDE802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.BL", "AmazonS3.BL\AmazonS3.BL.csproj", "{3C6A594B-3F7C-4DE4-97B9-06ECF7524F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.Entities", "AmazonS3.Entities\AmazonS3.Entities.csproj", "{80A7DB64-210B-4F8F-B425-1C535884DF08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.Data", "AmazonS3.Data\AmazonS3.Data.csproj", "{DCF6A3ED-785C-4B8E-BFD5-6F2ED5934A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3V2.DAL", "AmazonS3V2.DAL\AmazonS3V2.DAL.csproj", "{C8EC75B2-C0E9-457B-AC34-6DF1CB51F3AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3V3.DAL", "AmazonS3V3.DAL\AmazonS3V3.DAL.csproj", "{852F10A0-5666-406C-8DFC-93D6DB3B6F2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.DALHelpers", "AmazonS3.DALHelpers\AmazonS3.DALHelpers.csproj", "{3CF2C744-AA0A-4C86-B5E0-16D7CB9324C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonS3.DAL", "AmazonS3.DAL\AmazonS3.DAL.csproj", "{0C3D5E98-3E0B-42CD-89A2-77F8413D945C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{707B84D7-D10D-4ECD-A8EF-F9B2B4EDE802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707B84D7-D10D-4ECD-A8EF-F9B2B4EDE802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707B84D7-D10D-4ECD-A8EF-F9B2B4EDE802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707B84D7-D10D-4ECD-A8EF-F9B2B4EDE802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C6A594B-3F7C-4DE4-97B9-06ECF7524F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6A594B-3F7C-4DE4-97B9-06ECF7524F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6A594B-3F7C-4DE4-97B9-06ECF7524F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6A594B-3F7C-4DE4-97B9-06ECF7524F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A7DB64-210B-4F8F-B425-1C535884DF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A7DB64-210B-4F8F-B425-1C535884DF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A7DB64-210B-4F8F-B425-1C535884DF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A7DB64-210B-4F8F-B425-1C535884DF08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF6A3ED-785C-4B8E-BFD5-6F2ED5934A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF6A3ED-785C-4B8E-BFD5-6F2ED5934A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF6A3ED-785C-4B8E-BFD5-6F2ED5934A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF6A3ED-785C-4B8E-BFD5-6F2ED5934A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8EC75B2-C0E9-457B-AC34-6DF1CB51F3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EC75B2-C0E9-457B-AC34-6DF1CB51F3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EC75B2-C0E9-457B-AC34-6DF1CB51F3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EC75B2-C0E9-457B-AC34-6DF1CB51F3AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852F10A0-5666-406C-8DFC-93D6DB3B6F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852F10A0-5666-406C-8DFC-93D6DB3B6F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852F10A0-5666-406C-8DFC-93D6DB3B6F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852F10A0-5666-406C-8DFC-93D6DB3B6F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF2C744-AA0A-4C86-B5E0-16D7CB9324C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF2C744-AA0A-4C86-B5E0-16D7CB9324C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF2C744-AA0A-4C86-B5E0-16D7CB9324C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF2C744-AA0A-4C86-B5E0-16D7CB9324C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3D5E98-3E0B-42CD-89A2-77F8413D945C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3D5E98-3E0B-42CD-89A2-77F8413D945C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3D5E98-3E0B-42CD-89A2-77F8413D945C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3D5E98-3E0B-42CD-89A2-77F8413D945C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
