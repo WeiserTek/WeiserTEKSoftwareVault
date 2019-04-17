@@ -1,0 +1,193 @@
+
+//----- Object Class Definitions ------------------------------------------------------
+class WavePointTriggerClusterObject{
+   public:
+      int BarStart;  
+      int BarEnd;
+      int ClusterType;            //High=1, Low=-1, Neutral=0 (not set yet)
+   WavePointTriggerClusterObject()
+   {
+      Direction direction;
+      ClusterType = direction.Neutral;
+      BarStart = 0;
+      BarEnd = 0;
+   }
+};
+
+class WavePointTriggerClusterObjectList{
+   public:
+      WavePointTriggerClusterObject WavePointTriggerClusters;
+};
+
+class WavePointObject{
+   public:
+      datetime WavePointDateTime;  //Datetime of bar found for a wave point
+      double WavePointValue;       //High or low price depending on wavePointsType
+      int WavePointType;            //High=1, Low=-1, Neutral=0 (not set yet)
+   WavePointObject()
+   {
+      DirectionByColor directionByColor;
+      WavePointType = directionByColor.YellowDirection;
+   }
+};
+
+class WavePointObjectList{
+   public:
+      WavePointObject WavePointObjects[];
+};
+
+//Direction object that can be used throughout application.
+class Direction{
+   public:
+      int Long;
+      int Short;
+      int Neutral;
+   
+   Direction()
+   {
+      Long=1;
+      Short=-1;
+      Neutral=0;
+   }
+};
+
+class DirectionByColor(
+   public:
+      long GreenDirection;  //Long
+      long RedDirection;    //Short
+      long YellowDirection; //Neutral
+   
+   DirectionByColor()
+   {
+      GreenDirection=Green;
+      RedDirection=Red;
+      YellowDirection=Yellow;
+   }
+};
+
+class WaveBreakManager{
+   public:
+      bool init()
+      {
+         DeleteAllObjectsByPrefix("PTT");
+         
+      }  
+
+};
+
+string DebugOutput="";
+
+void ProcessRobotCommands()
+{
+   Process3EMATrendDirection_1000();
+   
+   OutputDebugMessage();
+   
+}
+
+
+
+void ProcessWaveBreak()
+{
+   //Find first Red or Green WavePointTriggerObject
+
+}
+
+void Process3EMATrendDirection_1000()
+{
+   int trend = 0;
+   bool debug = Debug_3EMATrendDirection_1000;
+
+   double emaShortest = iMA(NULL,Input_3EMATrendDirection_Timeframe_1000,Input_3EMATrendDirection_Shortest_1000,0,MODE_EMA,0,1);    
+   double emaMiddle1 = iMA(NULL,Input_3EMATrendDirection_Timeframe_1000,Input_3EMATrendDirection_Middle1_1000,0,MODE_EMA,0,1);
+   double emaLongest = iMA(NULL,Input_3EMATrendDirection_Timeframe_1000,Input_3EMATrendDirection_Longest_1000,0,MODE_EMA,0,1);
+
+   if((emaShortest > emaMiddle1) && (emaMiddle1 > emaLongest))
+   {
+      trend=1;
+   }
+   
+   if((emaShortest < emaMiddle1) && (emaMiddle1 < emaLongest))
+   {
+      trend = -1;
+   }
+   
+   if(debug)
+   {
+      DebugOutput = StringConcatenate(DebugOutput,"3EMA TrendDirection (1000): ",trend);
+   }
+   
+   Output_3EMATrendDirection_1000 = trend;
+}
+
+bool IsCandleRed(int bar,int timeFrame)
+{
+   int isCandleRed = false;
+   if(iOpen(NULL, timeFrame , bar) > iClose(NULL, timeFrame , bar))
+   {
+      isCandleRed = true;
+   }
+   return(isCandleRed);
+}
+
+bool IsCandleGreen(int bar,int timeFrame)
+{
+   bool isCandleGreen = false;
+   if(iOpen(NULL, timeFrame , bar) < iClose(NULL, timeFrame , bar))
+   {
+      isCandleGreen = true;
+   }
+   return(isCandleGreen);
+}
+
+int GetXCandlesGreenFlagCount(int startBar, int endBar,int timeFrame)
+{
+   int result = 0;
+   for (int bar = startBar; bar <= endBar; bar++)
+   {
+      if(IsCandleGreen(bar,timeFrame)==1)
+      {
+         result=result + 1;
+      }
+   }
+   return(result);
+}
+
+int GetXCandlesRedFlagCount(int startBar, int endBar,int timeFrame)
+{
+   int result = 0;
+   for (int bar = startBar; bar <= endBar; bar++)
+   {
+      if(IsCandleRed(bar,timeFrame)==1)
+      {
+         result=result + 1;
+      }
+   }
+  return(result);   
+}
+
+void DeleteAllObjectsByPrefix(string prefix)
+{
+   string cmd;
+
+   for(int x=ObjectsTotal()-1;x>=0;x--)
+   {
+      cmd = ObjectName(x);
+      if(StringSubstr(ObjectName(x),0,StringLen(prefix)) == prefix)
+      {
+         ObjectDelete(cmd);
+      }
+   }
+   WindowRedraw();
+   Print("All Objects with Prefix " + prefix + " Cleared");
+}
+
+void OutputDebugMessage()
+{
+   Comment
+   (
+      DebugOutput
+   );
+   DebugOutput = "";
+}
+
